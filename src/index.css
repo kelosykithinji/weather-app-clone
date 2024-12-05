@@ -7,8 +7,10 @@ body{
 .body-container{
     background: #FFFFFF;
     padding:30px;
-    margin:0 auto;
-    max-width: 600px;
+    margin:30px auto;
+    max-width: 700px;
+    border-radius: 20px;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px; 
 
 }
 .input-city{
@@ -37,6 +39,7 @@ p{
 .mid-content-1{
     display:flex;
     justify-content: space-between;
+    padding: 30px 0 30px 0;
 }
 
 .mid-content-3{
@@ -45,5 +48,29 @@ p{
     margin-top:30px;
 }
 .material-symbols-outlined{
-    font-size:50px ;
+    font-size:60px ;
+    position:relative;
+    right:-15px;
+}
+.temp{
+    font-size: 80px;
+    font-weight:600 ;
+}
+.unit{
+    font-size: 30px;
+    position:relative;
+    top:-37px;
+    left:-15px;
+}
+main{
+    border-top:2px solid #F9F7FE;
+    margin-bottom: 10px;
+}
+footer{
+    border-top:2px solid #F9F7FE;
+    padding-top: 20px;
+    text-align: center;
+}
+form{
+    padding-bottom:20px
 }
