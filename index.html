@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <script src="https://unpkg.com/axios@1.6.7/dist/axios.min.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
@@ -13,15 +14,15 @@
 <body>
     <div class="body-container">
         <header>
-            <form>
-                <input type="text" placeholder="Enter a city" required class="input-city"/>
+            <form id="search-form">
+                <input type="text" placeholder="Enter a city" required class="input-city" id="city-input"/>
                 <input type="submit" value="Search" class="input-search">
             </form>
         </header>
         <main>
             <div class="mid-content-1">
                 <div class="mid-content-2">
-                    <h1>Paris</h1>
+                    <h1 id="city">Paris</h1>
                     <p>Wenesday 23:28, mist
                     <br>
                     Humidiy:<strong>95%</strong>, Wind: <strong>3.6km/h</strong>
@@ -30,7 +31,7 @@
                 <div class="mid-content-3">
                     <div class="temperature"> 
                         <span class="material-symbols-outlined" >air</span>
-                        <span class="temp">6</span> 
+                        <span class="temp" id="temp">6</span> 
                         <span class="unit">°C</span>
                     </div>
                 </div>
@@ -42,5 +43,6 @@
             <a href="https://github.com/kelosykithinji/weather-app-clone">GitHub</a> and hosted on <a href="https://wonderful-boba-a669ac.netlify.app/">Netlify</a>
         </footer>
     </div>
+    <script src="src/index.js"></script>
 </body>
 </html>
