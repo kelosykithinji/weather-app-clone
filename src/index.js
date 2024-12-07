@@ -11,11 +11,11 @@ function displayTemp(response){
     let iconElement = document.querySelector("#icon");
     console.log(response.data);
 
-    humidityElement.innerHTML = `${response.data.temperature.humidity}%`;
+    humidityElement.innerHTML = `${response.data.temperature.humidity}% ,`;
     windSpeed.innerHTML = `${response.data.wind.speed} km/h`;
     tempElement.innerHTML = `${currentTemp}`;
     descriptionElement.innerHTML= response.data.condition.description;
-    timeElement.innerHTML = getWeekDay(date);
+    timeElement.innerHTML =`${ getWeekDay(date)} ,`;
     iconElement.innerHTML = `<img src="${response.data.condition.icon_url}" class= "icon"/>`;
    
     
