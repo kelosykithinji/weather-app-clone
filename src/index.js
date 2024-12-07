@@ -6,21 +6,31 @@ function displayTemp(response){
     let humidityElement = document.querySelector("#humidity");
     let windSpeed = document.querySelector("#wind-speed");
     let timeElement = document.querySelector("#time");
-    let weekdayElement = document.querySelector("#week-day");
+   
     let descriptionElement = document.querySelector("#description");
+    let date =new Date(response.data.time *1000);
+    console.log(response.data);
 
     humidityElement.innerHTML = `${response.data.temperature.humidity}%`;
     windSpeed.innerHTML = `${response.data.wind.speed} km/h`;
     tempElement.innerHTML = `${currentTemp}`;
     descriptionElement.innerHTML= response.data.condition.description;
-   // descriptionElement.innerHTML = 
+    timeElement.innerHTML = getWeekDay(date);
+   
     
 }
-function changeDateAndDay(date){
+function getWeekDay(date){
+    
+    let minutes  = date.getMinutes();
+    let hours= date.getHours();
     let weekDays = ["Sunday","Monday", "Tuesday","Wednesday","Thursday","Friday","Saturday"];
-    let now= newDate();
-    let hour = now.gethours();
-    let minute = now.getminutes();
+
+    let day =weekDays[date.getDay()];
+
+    if (minutes < 10){
+        minutes =`0 ${minutes}`;
+    }
+    return`${day} ${hours}: ${minutes}`
 
 
 }
