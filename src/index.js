@@ -6,9 +6,9 @@ function displayTemp(response){
     let humidityElement = document.querySelector("#humidity");
     let windSpeed = document.querySelector("#wind-speed");
     let timeElement = document.querySelector("#time");
-   
     let descriptionElement = document.querySelector("#description");
     let date =new Date(response.data.time *1000);
+    let iconElement = document.querySelector("#icon");
     console.log(response.data);
 
     humidityElement.innerHTML = `${response.data.temperature.humidity}%`;
@@ -16,6 +16,7 @@ function displayTemp(response){
     tempElement.innerHTML = `${currentTemp}`;
     descriptionElement.innerHTML= response.data.condition.description;
     timeElement.innerHTML = getWeekDay(date);
+    iconElement.innerHTML = `<img src="${response.data.condition.icon_url}" class= "icon"/>`;
    
     
 }
@@ -30,7 +31,7 @@ function getWeekDay(date){
     if (minutes < 10){
         minutes =`0 ${minutes}`;
     }
-    return`${day} ${hours}: ${minutes}`
+    return`${day} ${hours}:${minutes}`
 
 
 }
