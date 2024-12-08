@@ -78,3 +78,29 @@ footer{
 form{
     padding-bottom:20px
 }
+.weather-forecast-container{
+    margin-bottom: 20px;
+}
+.weather-forecast-temperatures{
+    display: flex;
+    justify-content: center;
+    
+}
+.weather-forecast-day{
+    text-align: center;
+}
+.weather-forecast-icon{
+    text-align: center;
+}
+.forecast-container{
+    display: flex;
+    justify-content: space-between;
+    margin-right:30px;
+    margin-left: 20px;
+}
+.weather-forecast-temp-1{
+    color: red;
+}
+.weather-forecast-temp-2{
+    color:rgb(238, 125, 125);
+}
