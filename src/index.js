@@ -50,6 +50,31 @@ function displayCity(city){
     axios.get(apiUrl).then(displayTemp);
       
 }
+function displayForecast(){
+    let days = ["SUN","MON","TUE","WED","THUR","FRI","SAT"];
+    let forecastHtml= "";
+
+    days.forEach(function(day){
+        forecastHtml =
+         forecastHtml += 
+         `
+            <div class="weather-forecast-container">
+                <div class="weather-forecast-day">${day}</div>
+                <div class="weather-forecast-icon">☁</div>
+                <div class="weather-forecast-temperatures">
+                    <div class="weather-forecast-temp-1">19°</div>
+                    <div class="weather-forecast-temp-2"> 30°</div>
+                </div>
+            </div>
+         `;
+});
+
+let forecastElement = document.querySelector("#forecast");
+ forecastElement.innerHTML =forecastHtml;
+}
 
 let searchForm = document.querySelector("#search-form");
 searchForm.addEventListener("submit", displayCity);
+
+displayForecast();
+displayCity("Paris");

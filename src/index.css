@@ -80,7 +80,10 @@ form{
 }
 .weather-forecast-container{
     margin-bottom: 20px;
-}
+    flex:1;
+               }               /* Allow each forecast item to grow equally */
+    
+
 .weather-forecast-temperatures{
     display: flex;
     justify-content: center;
@@ -91,6 +94,8 @@ form{
 }
 .weather-forecast-icon{
     text-align: center;
+    font-size: 50px;
+    color: #885DF1;
 }
 .forecast-container{
     display: flex;
@@ -103,4 +108,10 @@ form{
 }
 .weather-forecast-temp-2{
     color:rgb(238, 125, 125);
+}
+#forecast {
+    display: flex;              
+    justify-content: space-between; 
+    flex-wrap: wrap;           /* Allow items to wrap onto the next line if needed */
+    margin: 20px 0;          
 }
