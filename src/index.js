@@ -17,7 +17,7 @@ function displayTemp(response){
     timeElement.innerHTML =`${ getWeekDay(date)} ,`;
     iconElement.innerHTML = `<img src="${response.data.condition.icon_url}" class= "icon"/>`;
 
-    displayForecast(response.data.city);
+    getForecast(response.data.city);
    
     
 }
@@ -46,8 +46,7 @@ function displayCity(city){
     let cityName = enterCityInput.value;
 
    let apiKey = "10cf3413810a7bc0175f0o294a8aatbf";
-   let apiUrl =
-     `https://api.shecodes.io/weather/v1/current?query=${cityName}&key=${apiKey}`;
+   let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${cityName}&key=${apiKey}&units=metric`;
     axios.get(apiUrl).then(displayTemp);
 
     
@@ -58,9 +57,12 @@ function getForecast(city){
      let apiKey = "10cf3413810a7bc0175f0o294a8aatbf";
      let apiUrl = `https://api.shecodes.io/weather/v1/forecast?query=${city}&key=${apiKey}&units=metric`;
      axios.get(apiUrl).then(displayForecast);
+
+   console.log(apiUrl);
       
 }
 function displayForecast(response){
+   
     
 
     let days = ["SUN","MON","TUE","WED","THUR","FRI","SAT"];
@@ -87,6 +89,7 @@ let forecastElement = document.querySelector("#forecast");
 
 let searchForm = document.querySelector("#search-form");
 searchForm.addEventListener("submit", displayCity);
+
 
 
 
